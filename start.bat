@@ -1,0 +1,13 @@
+@echo off
+echo Starting Spring Boot backend...
+cd bot
+start cmd /k mvn spring-boot:run
+cd ..
+
+echo Waiting for backend to initialize...
+timeout /t 10
+
+echo Launching Flutter app...
+cd flutter_application_1
+flutter run
+echo Running Flutter app...
