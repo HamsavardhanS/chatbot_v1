@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
+
+const String baseUrl = "https://chatbot-v1-90ar.onrender.com";
 class HistoryScreen extends StatefulWidget {
   final String mobileNumber;
 
@@ -27,7 +29,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
     });
 
     try {
-      final url = Uri.parse('http://10.0.2.2:8080/api/history/${widget.mobileNumber}');
+      final url = Uri.parse("$baseUrl/api/history/${widget.mobileNumber}");
       final response = await http.get(url);
 
       if (response.statusCode == 200) {
